@@ -12,7 +12,7 @@ WORKDIR /home
 
 # Install Go
 
-ENV GOLANG_VERSION=go1.17.1.linux-amd64
+ENV GOLANG_VERSION=go1.19.4.linux-amd64
 ENV ROCKSDB_VERSION=v6.22.1
 ENV GOPATH=/go
 ENV PATH=$PATH:$GOPATH/bin
@@ -24,7 +24,6 @@ RUN cd /opt && wget https://dl.google.com/go/$GOLANG_VERSION.tar.gz && \
     tar xf $GOLANG_VERSION.tar.gz
 RUN ln -s /opt/go/bin/go /usr/bin/go
 RUN mkdir -p $GOPATH
-RUN echo -n "GO version: " && go version
 RUN echo -n "GOPATH: " && echo $GOPATH
 
 WORKDIR /home
